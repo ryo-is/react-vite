@@ -15,7 +15,7 @@ export const App = () => {
         <button
           type="button"
           onClick={() => setCount((c) => c + 1)}
-          className="btn"
+          className="btn btn-primary"
         >
           count up
         </button>
@@ -26,7 +26,7 @@ export const App = () => {
         <button
           type="button"
           onClick={() => countSetState({ count: countByRecoil + 1 })}
-          className="btn"
+          className="btn btn-success"
         >
           count up
         </button>
