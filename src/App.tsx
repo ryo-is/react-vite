@@ -4,6 +4,7 @@ import { countSelectors } from './stores/recoil/count/selectors';
 import { countOperations } from './stores/recoil/count/operations';
 import { RootState } from './stores/redux';
 import { increment, decrement } from './stores/redux/count/slice';
+import { useCountValue, useCountSetValue } from './contexts/count';
 
 export const App = () => {
   // component
@@ -16,6 +17,10 @@ export const App = () => {
   // redux
   const { countByRedux } = useSelector((stete: RootState) => stete.count);
   const dispatch = useDispatch();
+
+  // contexts
+  const countByContext = useCountValue();
+  const setCountByContext = useCountSetValue();
 
   return (
     <div className="flex gap-x-8 min-h-screen text-zinc-200 bg-zinc-800 p-6">
@@ -72,6 +77,24 @@ export const App = () => {
           count down
         </button>
         <div className="mt-2 text-lg">count is: {countByRedux}</div>
+      </div>
+      <div className="my-2">
+        <div className="mb-2">Context State</div>
+        <button
+          type="button"
+          onClick={() => setCountByContext(countByContext + 1)}
+          className="btn btn-error mr-2"
+        >
+          count up
+        </button>
+        <button
+          type="button"
+          onClick={() => setCountByContext(countByContext - 1)}
+          className="btn btn-error"
+        >
+          count down
+        </button>
+        <div className="mt-2 text-lg">count is: {countByContext}</div>
       </div>
     </div>
   );

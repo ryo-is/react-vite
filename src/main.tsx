@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { App } from './App';
 import './index.css';
 import { store } from './stores/redux';
+import { CountProvider } from './contexts/count';
 
 const root = document.getElementById('root');
 if (root) {
@@ -12,7 +13,9 @@ if (root) {
     <React.StrictMode>
       <RecoilRoot>
         <Provider store={store}>
-          <App />
+          <CountProvider>
+            <App />
+          </CountProvider>
         </Provider>
       </RecoilRoot>
     </React.StrictMode>
