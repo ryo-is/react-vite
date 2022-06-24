@@ -23,7 +23,7 @@ export const App = () => {
   const setCountByContext = useCountSetValue();
 
   return (
-    <div className="flex gap-x-8 min-h-screen text-zinc-200 bg-zinc-800 p-6">
+    <div className="flex gap-x-8 min-h-screen text-zinc-200 bg-base-100 p-6">
       <div className="my-2">
         <div className="mb-2">Component State</div>
         <button
