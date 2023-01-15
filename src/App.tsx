@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useAtom } from 'jotai';
 import { countSelectors } from './stores/recoil/count/selectors';
 import { countOperations } from './stores/recoil/count/operations';
 import { RootState } from './stores/redux';
 import { increment, decrement } from './stores/redux/count/slice';
 import { useCountValue, useCountSetValue } from './contexts/count';
+import { countAtom, getCountValue } from './stores/jotai/atom';
 
 export const App = () => {
   // component
@@ -21,6 +23,10 @@ export const App = () => {
   // contexts
   const countByContext = useCountValue();
   const setCountByContext = useCountSetValue();
+
+  // jotai
+  const [countByJotai, setCountByJotai] = useAtom(countAtom);
+  const [countValue] = useAtom(getCountValue);
 
   return (
     <div className="flex gap-x-8 min-h-screen text-zinc-200 bg-base-100 p-6">
@@ -95,6 +101,33 @@ export const App = () => {
           count down
         </button>
         <div className="mt-2 text-lg">count is: {countByContext}</div>
+      </div>
+      <div className="my-2">
+        <div className="mb-2">Jotai State</div>
+        <button
+          type="button"
+          onClick={() =>
+            setCountByJotai((p) => ({
+              count: p.count + 1,
+            }))
+          }
+          className="btn bg-sky-600 hover:bg-sky-600 mr-2"
+        >
+          count up
+        </button>
+        <button
+          type="button"
+          onClick={() =>
+            setCountByJotai((p) => ({
+              count: p.count - 1,
+            }))
+          }
+          className="btn bg-sky-600 hover:bg-sky-600"
+        >
+          count down
+        </button>
+        <div className="mt-2 text-lg">count is: {countByJotai.count}</div>
+        <div className="mt-1 text-lg">count is: {countValue}</div>
       </div>
     </div>
   );
