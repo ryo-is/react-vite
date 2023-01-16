@@ -9,6 +9,7 @@ import { useCountValue, useCountSetValue } from './contexts/count';
 import {
   countAtom,
   getCountValue,
+  getDoubleCountValue,
   countAtomWithStorageAtom,
 } from './stores/jotai/atom';
 
@@ -31,6 +32,7 @@ export const App = () => {
   // jotai
   const [countByJotai, setCountByJotai] = useAtom(countAtom);
   const [countValue] = useAtom(getCountValue);
+  const [doubleCountValue] = useAtom(getDoubleCountValue);
   const [countAtomWithStorage, setCountAtomWithStorage] = useAtom(
     countAtomWithStorageAtom
   );
@@ -135,6 +137,7 @@ export const App = () => {
         </button>
         <div className="mt-2 text-lg">count is: {countByJotai.count}</div>
         <div className="mt-1 text-lg">count is: {countValue}</div>
+        <div className="mt-1 text-lg">double count is: {doubleCountValue}</div>
       </div>
       <div className="my-2">
         <div className="mb-2">Jotai State with LocalStorage</div>
