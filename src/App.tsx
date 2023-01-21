@@ -1,8 +1,12 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useAtom } from 'jotai';
-import { countSelectors } from './stores/recoil/count/selectors';
-import { countOperations } from './stores/recoil/count/operations';
+import {
+  useCountSelector,
+  useCount2Selector,
+  useSumCountSelector,
+} from './stores/recoil/count/selectors';
+import { useCount, useCount2 } from './stores/recoil/count/operations';
 import { RootState } from './stores/redux';
 import { increment, decrement } from './stores/redux/count/slice';
 import { useCountValue, useCountSetValue } from './contexts/count';
@@ -18,8 +22,11 @@ export const App = () => {
   const [count, setCount] = useState(0);
 
   // recoil
-  const countByRecoil = countSelectors.useCountSelector();
-  const countSetState = countOperations.useCountSetState();
+  const countByRecoil = useCountSelector();
+  const count2ByRecoil = useCount2Selector();
+  const countSetState = useCount();
+  const count2SetState = useCount2();
+  const sumCount = useSumCountSelector();
 
   // redux
   const { countByRedux } = useSelector((stete: RootState) => stete.count);
@@ -74,6 +81,23 @@ export const App = () => {
           count down
         </button>
         <div className="mt-2 text-lg">count is: {countByRecoil}</div>
+
+        <button
+          type="button"
+          onClick={() => count2SetState({ count: count2ByRecoil + 1 })}
+          className="btn btn-success mr-2"
+        >
+          count up
+        </button>
+        <button
+          type="button"
+          onClick={() => count2SetState({ count: count2ByRecoil - 1 })}
+          className="btn btn-success"
+        >
+          count down
+        </button>
+        <div className="mt-2 text-lg">count2 is: {count2ByRecoil}</div>
+        <div className="mt-2 text-lg">sum count is: {sumCount}</div>
       </div>
       <div className="my-2">
         <div className="mb-2">Redux State</div>

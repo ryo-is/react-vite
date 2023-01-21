@@ -1,6 +1,12 @@
 import { useSetRecoilState } from 'recoil';
-import { countAtom } from './atom';
+import { countAtom, count2Atom } from './atom';
 
-export const countOperations = {
+const countOperations = {
   useCountSetState: () => useSetRecoilState(countAtom),
 };
+export const useCount = countOperations.useCountSetState;
+
+const count2Operations = {
+  useCountSetState: () => useSetRecoilState(count2Atom),
+};
+export const useCount2 = count2Operations.useCountSetState;
