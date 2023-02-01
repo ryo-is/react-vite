@@ -1,5 +1,9 @@
 import { useRecoilCallback } from 'recoil';
-import { populationAtom, prefectureAtom } from './atoms';
+import {
+  populationAtom,
+  prefectureAtom,
+  selectedPrefectureAtom,
+} from './atoms';
 import { Population, Prefecture } from './types';
 
 export const useFetchPrefectures = () =>
@@ -67,8 +71,24 @@ export const useFetchPopulations = () =>
       set(populationAtom, (prev) => ({
         ...prev,
         isLoading: false,
-        prefectures: [],
+        populations: [],
         error: e as Error,
       }));
+    }
+  });
+
+export const useOperationSelectedPrefecture = () =>
+  useRecoilCallback(({ set }) => (checked: boolean, pref: Prefecture) => {
+    if (checked) {
+      set(selectedPrefectureAtom, (prev) => [...prev, pref]);
+    } else {
+      set(selectedPrefectureAtom, (prev) => {
+        const prevPref = [...prev];
+        const idx = prevPref.findIndex((p) => p.prefCode === pref.prefCode);
+        if (idx >= 0) {
+          prevPref.splice(idx, 1);
+        }
+        return prevPref;
+      });
     }
   });

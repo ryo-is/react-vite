@@ -1,6 +1,14 @@
 import { selector, useRecoilValue } from 'recoil';
-import { populationAtom, prefectureAtom } from './atoms';
-import { PopulationAtom, PrefectureAtom } from './types';
+import {
+  populationAtom,
+  prefectureAtom,
+  selectedPrefectureAtom,
+} from './atoms';
+import {
+  PopulationAtom,
+  PrefectureAtom,
+  SelectedPrefectureAtom,
+} from './types';
 
 const prefecturesSelector = selector<PrefectureAtom>({
   key: 'prefectures_selector',
@@ -8,6 +16,14 @@ const prefecturesSelector = selector<PrefectureAtom>({
 });
 
 export const usePrefectures = () => useRecoilValue(prefecturesSelector);
+
+const selectedPrefecturesSelector = selector<SelectedPrefectureAtom>({
+  key: 'selected_prefectures_selector',
+  get: ({ get }) => get(selectedPrefectureAtom),
+});
+
+export const useSelectedPrefectures = () =>
+  useRecoilValue(selectedPrefecturesSelector);
 
 const populationsSelector = selector<PopulationAtom>({
   key: 'populations_selector',

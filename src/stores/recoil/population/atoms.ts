@@ -1,5 +1,9 @@
 import { atom } from 'recoil';
-import { PrefectureAtom, PopulationAtom } from './types';
+import {
+  PrefectureAtom,
+  SelectedPrefectureAtom,
+  PopulationAtom,
+} from './types';
 
 export const prefectureAtom = atom<PrefectureAtom>({
   key: 'prefectures',
@@ -8,6 +12,14 @@ export const prefectureAtom = atom<PrefectureAtom>({
     prefectures: [],
     error: null,
   },
+});
+
+export const selectedPrefectureAtom = atom<SelectedPrefectureAtom>({
+  key: 'selected_prefecture',
+  default: [
+    { prefCode: 13, prefName: '東京都' },
+    { prefCode: 1, prefName: '北海道' },
+  ],
 });
 
 export const populationAtom = atom<PopulationAtom>({

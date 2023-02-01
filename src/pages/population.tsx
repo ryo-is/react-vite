@@ -11,13 +11,15 @@ import {
 } from 'recharts';
 import {
   usePopulationSeries,
-  usePopulations,
   usePrefectures,
+  useSelectedPrefectures,
 } from '../stores/recoil/population/selectors';
 import {
   useFetchPopulations,
   useFetchPrefectures,
+  useOperationSelectedPrefecture,
 } from '../stores/recoil/population/operations';
+import { Prefecture } from '../stores/recoil/population/types';
 
 const lineColors = [
   '#b33dc6',
@@ -31,25 +33,32 @@ const lineColors = [
   '#ea5545',
 ];
 const getStrokeColor = (index: number) =>
-  lineColors[lineColors.length % (index + 1)];
+  lineColors[(index + 1) % lineColors.length];
 
 export const Population = () => {
   const prefectures = usePrefectures();
-  const populations = usePopulations();
+  const selectedPrefectures = useSelectedPrefectures();
   const fetchPrefectures = useFetchPrefectures();
   const fetchPopulations = useFetchPopulations();
   const series = usePopulationSeries();
+  const setSelectedPrefecture = useOperationSelectedPrefecture();
+
+  const isChecked = (code: number) => {
+    const idx = selectedPrefectures.findIndex((p) => p.prefCode === code);
+    return idx >= 0;
+  };
+
+  const handleOnChange = (checked: boolean, pref: Prefecture) => {
+    setSelectedPrefecture(checked, pref);
+  };
 
   useEffect(() => {
     void (async () => {
       await fetchPrefectures();
-      await fetchPopulations([
-        { prefCode: 13, prefName: '東京都' },
-        { prefCode: 1, prefName: '北海道' },
-      ]);
+      await fetchPopulations(selectedPrefectures);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [selectedPrefectures]);
 
   return (
     <div className="flex space-x-4">
@@ -72,6 +81,8 @@ export const Population = () => {
                     type="checkbox"
                     id={p.prefName}
                     className="checkbox checkbox-info border-zinc-400 hover:border-zinc-200 border-2"
+                    checked={isChecked(p.prefCode)}
+                    onChange={(e) => handleOnChange(e.target.checked, p)}
                   />
                   <label
                     className="label-text cursor-pointer text-zinc-200"
@@ -88,50 +99,46 @@ export const Population = () => {
         </div>
       </div>
       <div className="w-4/5">
-        {!populations.isLoading ? (
-          <ResponsiveContainer
-            width="100%"
-            height="100%"
-            className="text-zinc-700"
+        <ResponsiveContainer
+          width="100%"
+          height="100%"
+          className="text-zinc-700"
+        >
+          <LineChart
+            width={500}
+            height={300}
+            margin={{
+              top: 5,
+              right: 30,
+              left: 50,
+              bottom: 5,
+            }}
           >
-            <LineChart
-              width={500}
-              height={300}
-              margin={{
-                top: 5,
-                right: 30,
-                left: 50,
-                bottom: 5,
-              }}
-            >
-              <CartesianGrid strokeDasharray="3 3" opacity={0.5} />
-              <XAxis
-                dataKey="year"
-                type="category"
-                allowDuplicatedCategory={false}
-                stroke="#e4e4e7"
+            <CartesianGrid strokeDasharray="3 3" opacity={0.5} />
+            <XAxis
+              dataKey="year"
+              type="category"
+              allowDuplicatedCategory={false}
+              stroke="#e4e4e7"
+            />
+            <YAxis stroke="#e4e4e7" />
+            <Tooltip />
+            <Legend />
+            {series.map((s, i) => (
+              <Line
+                key={s.label}
+                type="monotone"
+                data={s.data}
+                name={s.label}
+                dataKey="value"
+                strokeWidth={4}
+                stroke={getStrokeColor(i)}
+                dot={{ r: 4, fill: getStrokeColor(i) }}
+                activeDot={{ r: 8 }}
               />
-              <YAxis stroke="#e4e4e7" />
-              <Tooltip />
-              <Legend />
-              {series.map((s, i) => (
-                <Line
-                  key={s.label}
-                  type="monotone"
-                  data={s.data}
-                  name={s.label}
-                  dataKey="value"
-                  strokeWidth={4}
-                  stroke={getStrokeColor(i)}
-                  dot={{ r: 4, fill: getStrokeColor(i) }}
-                  activeDot={{ r: 8 }}
-                />
-              ))}
-            </LineChart>
-          </ResponsiveContainer>
-        ) : (
-          <div>Loading...</div>
-        )}
+            ))}
+          </LineChart>
+        </ResponsiveContainer>
       </div>
     </div>
   );

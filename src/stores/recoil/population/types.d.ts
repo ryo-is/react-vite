@@ -6,6 +6,8 @@ export type PrefectureAtom = {
   error: Error | null;
 };
 
+export type SelectedPrefectureAtom = Prefecture[];
+
 export type Population = {
   label: string;
   data: Array<{ year: number; value: number }>;
