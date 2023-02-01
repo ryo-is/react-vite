@@ -15,3 +15,30 @@ const populationsSelector = selector<PopulationAtom>({
 });
 
 export const usePopulations = () => useRecoilValue(populationsSelector);
+
+export const usePopulationSeries = () =>
+  useRecoilValue(
+    selector<
+      {
+        label: string;
+        data: {
+          year: number;
+          value: number;
+        }[];
+      }[]
+    >({
+      key: 'population_for_chart',
+      get: ({ get }) => {
+        const { populations, isLoading } = get(populationAtom);
+        if (isLoading) {
+          return [];
+        }
+        return populations.map(({ label, data }) => ({
+          label,
+          data: data.map((d) => ({
+            ...d,
+          })),
+        }));
+      },
+    })
+  );

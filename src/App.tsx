@@ -2,6 +2,8 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Stores } from './pages/stores';
 import { Population } from './pages/population';
 
+import './configs/recoil';
+
 const router = createBrowserRouter([
   {
     path: '/',

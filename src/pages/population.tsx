@@ -1,5 +1,16 @@
 import { useEffect } from 'react';
 import {
+  CartesianGrid,
+  Legend,
+  Line,
+  LineChart,
+  ResponsiveContainer,
+  Tooltip,
+  XAxis,
+  YAxis,
+} from 'recharts';
+import {
+  usePopulationSeries,
   usePopulations,
   usePrefectures,
 } from '../stores/recoil/population/selectors';
@@ -8,11 +19,26 @@ import {
   useFetchPrefectures,
 } from '../stores/recoil/population/operations';
 
+const lineColors = [
+  '#b33dc6',
+  '#27aeef',
+  '#87bc45',
+  '#bdcf32',
+  '#ede15b',
+  '#edbf33',
+  '#ef9b20',
+  '#f46a9b',
+  '#ea5545',
+];
+const getStrokeColor = (index: number) =>
+  lineColors[lineColors.length % (index + 1)];
+
 export const Population = () => {
   const prefectures = usePrefectures();
   const populations = usePopulations();
   const fetchPrefectures = useFetchPrefectures();
   const fetchPopulations = useFetchPopulations();
+  const series = usePopulationSeries();
 
   useEffect(() => {
     void (async () => {
@@ -63,11 +89,40 @@ export const Population = () => {
       </div>
       <div className="w-4/5">
         {!populations.isLoading ? (
-          <div>
-            {populations.populations.map((p) => (
-              <div>{p.label}</div>
-            ))}
-          </div>
+          <ResponsiveContainer width="100%" height="100%">
+            <LineChart
+              width={500}
+              height={300}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 50,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="year"
+                type="category"
+                allowDuplicatedCategory={false}
+              />
+              <YAxis />
+              <Tooltip />
+              <Legend />
+              {series.map((s, i) => (
+                <Line
+                  key={s.label}
+                  type="monotone"
+                  data={s.data}
+                  name={s.label}
+                  dataKey="value"
+                  strokeWidth={4}
+                  stroke={getStrokeColor(i)}
+                  activeDot={{ r: 8 }}
+                />
+              ))}
+            </LineChart>
+          </ResponsiveContainer>
         ) : (
           <div>Loading...</div>
         )}
