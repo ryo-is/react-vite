@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from 'react';
 import {
   CartesianGrid,
@@ -55,9 +56,13 @@ export const Population = () => {
   useEffect(() => {
     void (async () => {
       await fetchPrefectures();
+    })();
+  }, []);
+
+  useEffect(() => {
+    void (async () => {
       await fetchPopulations(selectedPrefectures);
     })();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedPrefectures]);
 
   return (
@@ -99,46 +104,50 @@ export const Population = () => {
         </div>
       </div>
       <div className="w-4/5">
-        <ResponsiveContainer
-          width="100%"
-          height="100%"
-          className="text-zinc-700"
-        >
-          <LineChart
-            width={500}
-            height={300}
-            margin={{
-              top: 5,
-              right: 30,
-              left: 50,
-              bottom: 5,
-            }}
+        {series.length > 0 ? (
+          <ResponsiveContainer
+            width="100%"
+            height="100%"
+            className="text-zinc-700"
           >
-            <CartesianGrid strokeDasharray="3 3" opacity={0.5} />
-            <XAxis
-              dataKey="year"
-              type="category"
-              allowDuplicatedCategory={false}
-              stroke="#e4e4e7"
-            />
-            <YAxis stroke="#e4e4e7" />
-            <Tooltip />
-            <Legend />
-            {series.map((s, i) => (
-              <Line
-                key={s.label}
-                type="monotone"
-                data={s.data}
-                name={s.label}
-                dataKey="value"
-                strokeWidth={4}
-                stroke={getStrokeColor(i)}
-                dot={{ r: 4, fill: getStrokeColor(i) }}
-                activeDot={{ r: 8 }}
+            <LineChart
+              width={500}
+              height={300}
+              margin={{
+                top: 5,
+                right: 30,
+                left: 50,
+                bottom: 5,
+              }}
+            >
+              <CartesianGrid strokeDasharray="3 3" opacity={0.5} />
+              <XAxis
+                dataKey="year"
+                type="category"
+                allowDuplicatedCategory={false}
+                stroke="#e4e4e7"
               />
-            ))}
-          </LineChart>
-        </ResponsiveContainer>
+              <YAxis stroke="#e4e4e7" />
+              <Tooltip />
+              <Legend />
+              {series.map((s, i) => (
+                <Line
+                  key={s.label}
+                  type="monotone"
+                  data={s.data}
+                  name={s.label}
+                  dataKey="value"
+                  strokeWidth={4}
+                  stroke={getStrokeColor(i)}
+                  dot={{ r: 4, fill: getStrokeColor(i) }}
+                  activeDot={{ r: 8 }}
+                />
+              ))}
+            </LineChart>
+          </ResponsiveContainer>
+        ) : (
+          <div className="p-4">No Data...</div>
+        )}
       </div>
     </div>
   );

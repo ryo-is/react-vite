@@ -16,10 +16,7 @@ export const prefectureAtom = atom<PrefectureAtom>({
 
 export const selectedPrefectureAtom = atom<SelectedPrefectureAtom>({
   key: 'selected_prefecture',
-  default: [
-    { prefCode: 13, prefName: '東京都' },
-    { prefCode: 1, prefName: '北海道' },
-  ],
+  default: [],
 });
 
 export const populationAtom = atom<PopulationAtom>({
