@@ -74,7 +74,7 @@ export const Population = () => {
                     className="checkbox checkbox-info border-zinc-400 hover:border-zinc-200 border-2"
                   />
                   <label
-                    className="label-text cursor-pointer"
+                    className="label-text cursor-pointer text-zinc-200"
                     htmlFor={p.prefName}
                   >
                     {p.prefName}
@@ -89,7 +89,11 @@ export const Population = () => {
       </div>
       <div className="w-4/5">
         {!populations.isLoading ? (
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer
+            width="100%"
+            height="100%"
+            className="text-zinc-700"
+          >
             <LineChart
               width={500}
               height={300}
@@ -100,13 +104,14 @@ export const Population = () => {
                 bottom: 5,
               }}
             >
-              <CartesianGrid strokeDasharray="3 3" />
+              <CartesianGrid strokeDasharray="3 3" opacity={0.5} />
               <XAxis
                 dataKey="year"
                 type="category"
                 allowDuplicatedCategory={false}
+                stroke="#e4e4e7"
               />
-              <YAxis />
+              <YAxis stroke="#e4e4e7" />
               <Tooltip />
               <Legend />
               {series.map((s, i) => (
@@ -118,6 +123,7 @@ export const Population = () => {
                   dataKey="value"
                   strokeWidth={4}
                   stroke={getStrokeColor(i)}
+                  dot={{ r: 4, fill: getStrokeColor(i) }}
                   activeDot={{ r: 8 }}
                 />
               ))}
