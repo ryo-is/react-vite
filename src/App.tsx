@@ -3,6 +3,7 @@ import { Stores } from './pages/stores';
 import { Population } from './pages/population';
 
 import './configs/recoil';
+import { PopulationByJotai } from './pages/population-jotai';
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
   {
     path: '/population',
     element: <Population />,
+  },
+  {
+    path: '/population-jotai',
+    element: <PopulationByJotai />,
   },
 ]);
 
