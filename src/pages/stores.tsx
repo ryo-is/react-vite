@@ -18,7 +18,7 @@ import {
   getDoubleCountValue,
   getSumCountValue,
   countAtomWithStorageAtom,
-} from '../stores/jotai/atom';
+} from '../stores/jotai/count/atom';
 
 export const Stores = () => {
   // component
