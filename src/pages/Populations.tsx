@@ -36,7 +36,7 @@ const lineColors = [
 const getStrokeColor = (index: number) =>
   lineColors[(index + 1) % lineColors.length];
 
-export const Population = () => {
+export const Populations = () => {
   const prefectures = usePrefectures();
   const selectedPrefectures = useSelectedPrefectures();
   const fetchPrefectures = useFetchPrefectures();

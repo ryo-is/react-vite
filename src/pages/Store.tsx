@@ -20,7 +20,7 @@ import {
   countAtomWithStorageAtom,
 } from '../stores/jotai/count/atom';
 
-export const Stores = () => {
+export const Store = () => {
   // component
   const [count, setCount] = useState(0);
 
