@@ -146,7 +146,7 @@ export const Population = () => {
             </LineChart>
           </ResponsiveContainer>
         ) : (
-          <div className="p-4">No Data...</div>
+          <div className="p-4">Please select prefecture.</div>
         )}
       </div>
     </div>
