@@ -1,4 +1,5 @@
 import { atom } from 'jotai';
+import { toastAtom } from '../toast/atom';
 import { Population, Prefecture } from './types';
 
 export const prefectureAtom = atom<Prefecture[]>([]);
@@ -16,7 +17,7 @@ export const usePrefectures = atom(
         },
       }
     );
-    const { result, statusCode } = (await res.json()) as {
+    const { result, statusCode, message } = (await res.json()) as {
       result: Prefecture[];
       statusCode?: number;
       message: string;
@@ -25,6 +26,10 @@ export const usePrefectures = atom(
       set(prefectureAtom, result);
     } else {
       set(prefectureAtom, []);
+      set(toastAtom, {
+        status: 'error',
+        message,
+      });
     }
   }
 );
@@ -84,6 +89,10 @@ export const usePopulations = atom(
       set(populationAtom, populations);
     } else {
       set(populationAtom, () => []);
+      set(toastAtom, {
+        status: 'error',
+        message: errorResult.message,
+      });
     }
   }
 );
