@@ -12,6 +12,7 @@ import {
   YAxis,
 } from 'recharts';
 import {
+  useClearSelectedPrefectures,
   usePopulations,
   usePopulationSeries,
   usePrefectures,
@@ -40,6 +41,7 @@ export const PopulationByJotai = () => {
   );
   const [, fetchPopulations] = useAtom(usePopulations);
   const [series] = useAtom(usePopulationSeries);
+  const [, clearSelectedPrefectures] = useAtom(useClearSelectedPrefectures);
 
   const isChecked = (code: number) => {
     const idx = selectedPrefectures.findIndex((p) => p.prefCode === code);
@@ -48,6 +50,10 @@ export const PopulationByJotai = () => {
 
   const handleOnChange = (checked: boolean, pref: Prefecture) => {
     setSelectedPrefectures({ checked, pref });
+  };
+
+  const handleOnClear = () => {
+    clearSelectedPrefectures();
   };
 
   useEffect(() => {
@@ -67,7 +73,11 @@ export const PopulationByJotai = () => {
       <div className="w-1/5">
         <div className="mb-4 flex justify-between items-center">
           <div>Prefectures</div>
-          <button type="button" className="btn btn-info">
+          <button
+            type="button"
+            className="btn btn-info"
+            onClick={() => handleOnClear()}
+          >
             clear all
           </button>
         </div>

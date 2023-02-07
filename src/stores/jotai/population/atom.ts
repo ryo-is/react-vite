@@ -106,3 +106,7 @@ export const usePopulationSeries = atom((get) => {
     })),
   }));
 });
+
+export const useClearSelectedPrefectures = atom(null, (_, set) => {
+  set(selectedPrefectureAtom, []);
+});
