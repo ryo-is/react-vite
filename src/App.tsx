@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { Top } from './pages/Top';
 import { Store } from './pages/Store';
-import { Populations } from './pages/Populations';
+// import { Populations } from './pages/Populations';
 import { PopulationByJotai } from './pages/PopulationByJotai';
 import { Toast } from './components/Toast';
 
@@ -9,14 +10,18 @@ import './configs/recoil';
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <Top />,
+  },
+  {
+    path: '/store',
     element: <Store />,
   },
+  // {
+  //   path: '/population',
+  //   element: <Populations />,
+  // },
   {
     path: '/population',
-    element: <Populations />,
-  },
-  {
-    path: '/population-jotai',
     element: <PopulationByJotai />,
   },
 ]);
