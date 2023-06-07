@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { useAtom } from 'jotai';
+import { useAtom, useSetAtom } from 'jotai';
 import { useEffect } from 'react';
 import {
   CartesianGrid,
@@ -39,9 +39,9 @@ export const PopulationByJotai = () => {
   const [selectedPrefectures, setSelectedPrefectures] = useAtom(
     useSelectedPrefectures
   );
-  const [, fetchPopulations] = useAtom(usePopulations);
+  const fetchPopulations = useSetAtom(usePopulations);
   const [series] = useAtom(usePopulationSeries);
-  const [, clearSelectedPrefectures] = useAtom(useClearSelectedPrefectures);
+  const clearSelectedPrefectures = useSetAtom(useClearSelectedPrefectures);
 
   const isChecked = (code: number) => {
     const idx = selectedPrefectures.findIndex((p) => p.prefCode === code);
@@ -64,7 +64,7 @@ export const PopulationByJotai = () => {
 
   useEffect(() => {
     void (async () => {
-      await fetchPopulations(selectedPrefectures);
+      await fetchPopulations();
     })();
   }, [selectedPrefectures]);
 
