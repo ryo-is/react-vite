@@ -68,24 +68,24 @@ export const Populations = () => {
   return (
     <div className="flex space-x-4">
       <div className="w-1/5">
-        <div className="mb-4 flex justify-between items-center">
+        <div className="mb-4 flex items-center justify-between">
           <div>Prefectures</div>
-          <button type="button" className="btn btn-info">
+          <button type="button" className="btn-info btn">
             clear all
           </button>
         </div>
-        <div className="py-4 px-8 max-h-[80vh] flex flex-col flex-wrap border-2 border-zinc-500 w-full rounded-lg overflow-scroll">
+        <div className="flex max-h-[80vh] w-full flex-col flex-wrap overflow-scroll rounded-lg border-2 border-zinc-500 px-8 py-4">
           {!prefectures.isLoading ? (
             <>
               {prefectures.prefectures.map((p) => (
                 <div
                   key={p.prefCode}
-                  className="flex items-center space-x-2 my-1"
+                  className="my-1 flex items-center space-x-2"
                 >
                   <input
                     type="checkbox"
                     id={p.prefName}
-                    className="checkbox checkbox-info border-zinc-400 hover:border-zinc-200 border-2"
+                    className="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
                     checked={isChecked(p.prefCode)}
                     onChange={(e) => handleOnChange(e.target.checked, p)}
                   />

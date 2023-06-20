@@ -27,7 +27,7 @@ const router = createBrowserRouter([
 ]);
 
 export const App = () => (
-  <div className="min-h-screen text-zinc-200 bg-base-100 p-8">
+  <div className="min-h-screen bg-base-100 p-8 text-zinc-200">
     <RouterProvider router={router} />
     <Toast />
   </div>

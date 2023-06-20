@@ -19,6 +19,7 @@ import {
   useSelectedPrefectures,
 } from '../stores/jotai/population/atom';
 import { Prefecture } from '../stores/jotai/population/types';
+import { useToast } from '../stores/jotai/toast/atom';
 
 const lineColors = [
   '#b33dc6',
@@ -42,6 +43,7 @@ export const PopulationByJotai = () => {
   const fetchPopulations = useSetAtom(usePopulations);
   const [series] = useAtom(usePopulationSeries);
   const clearSelectedPrefectures = useSetAtom(useClearSelectedPrefectures);
+  const setToast = useSetAtom(useToast);
 
   const isChecked = (code: number) => {
     const idx = selectedPrefectures.findIndex((p) => p.prefCode === code);
@@ -54,6 +56,7 @@ export const PopulationByJotai = () => {
 
   const handleOnClear = () => {
     clearSelectedPrefectures();
+    setToast({ message: 'done clear all', status: 'info' });
   };
 
   useEffect(() => {
@@ -71,28 +74,28 @@ export const PopulationByJotai = () => {
   return (
     <div className="flex space-x-4">
       <div className="w-1/5">
-        <div className="mb-4 flex justify-between items-center">
+        <div className="mb-4 flex items-center justify-between">
           <div>Prefectures</div>
           <button
             type="button"
-            className="btn btn-info"
+            className="btn-info btn"
             onClick={() => handleOnClear()}
           >
             clear all
           </button>
         </div>
-        <div className="py-4 px-8 max-h-[80vh] flex flex-col flex-wrap border-2 border-zinc-500 w-full rounded-lg overflow-scroll">
+        <div className="flex max-h-[80vh] w-full flex-col flex-wrap overflow-scroll rounded-lg border-2 border-zinc-500 px-8 py-4">
           {prefectures.length > 0 ? (
             <>
               {prefectures.map((p) => (
                 <div
                   key={p.prefCode}
-                  className="flex items-center space-x-2 my-1"
+                  className="my-1 flex items-center space-x-2"
                 >
                   <input
                     type="checkbox"
                     id={p.prefName}
-                    className="checkbox checkbox-info border-zinc-400 hover:border-zinc-200 border-2"
+                    className="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
                     checked={isChecked(p.prefCode)}
                     onChange={(e) => handleOnChange(e.target.checked, p)}
                   />

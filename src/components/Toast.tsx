@@ -2,6 +2,13 @@ import { ExclamationCircleIcon } from '@heroicons/react/20/solid';
 import { useAtom } from 'jotai';
 import { useToast } from '../stores/jotai/toast/atom';
 
+const alertLevel: Record<'info' | 'error' | 'success' | 'hidden', string> = {
+  info: 'alert-info',
+  error: 'alert-error',
+  success: 'alert-success',
+  hidden: '',
+};
+
 export const Toast = () => {
   const [toast] = useAtom(useToast);
 
@@ -11,9 +18,11 @@ export const Toast = () => {
 
   return (
     <div className="toast">
-      <div className={`alert alert-${toast.status}`}>
-        <div className="px-2">
-          <ExclamationCircleIcon className="w-6 h-6 mr-1" />
+      <div className={`alert ${alertLevel[toast.status]}`}>
+        <div className="flex gap-x-1 px-2">
+          {toast.status === 'error' && (
+            <ExclamationCircleIcon className="mr-1 h-6 w-6" />
+          )}
           <span>{toast.message}</span>
         </div>
       </div>

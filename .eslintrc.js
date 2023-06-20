@@ -9,6 +9,7 @@ module.exports = {
     'airbnb/hooks',
     'plugin:@typescript-eslint/recommended',
     'plugin:@typescript-eslint/recommended-requiring-type-checking',
+    'plugin:tailwindcss/recommended',
     'prettier',
   ],
   parser: '@typescript-eslint/parser',
@@ -21,7 +22,7 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
-  plugins: ['react', '@typescript-eslint', 'unused-imports'],
+  plugins: ['react', '@typescript-eslint', 'unused-imports', 'tailwindcss'],
   ignorePatterns: ['build'],
   rules: {
     'no-use-before-define': 'off',
