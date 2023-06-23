@@ -151,6 +151,8 @@ export const PopulationByJotai = () => {
                   stroke={getStrokeColor(i)}
                   dot={{ r: 4, fill: getStrokeColor(i) }}
                   activeDot={{ r: 8 }}
+                  animationDuration={500}
+                  animationEasing="ease-in-out"
                 />
               ))}
             </LineChart>
