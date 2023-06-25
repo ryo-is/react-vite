@@ -23,7 +23,7 @@
   "include": [
     "src",
     "vite.config.ts",
-    "jest.setup.ts"
+    "vitest.setup.ts"
   ],
   "references": [
     {
