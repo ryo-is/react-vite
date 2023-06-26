@@ -23,7 +23,7 @@ export const Toast = () => {
           {toast.status === 'error' && (
             <ExclamationCircleIcon className="mr-1 h-6 w-6" />
           )}
-          <span>{toast.message}</span>
+          <span data-testid="toast-message">{toast.message}</span>
         </div>
       </div>
     </div>
