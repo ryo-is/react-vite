@@ -1,6 +1,7 @@
 import { atom } from 'jotai';
 import { toastAtom } from '../toast/atom';
 import { Population, Prefecture } from './types';
+import { getPrefectures, getPopulations } from '../../../apis/fetch';
 
 export const prefectureAtom = atom<Prefecture[]>([]);
 export const selectedPrefectureAtom = atom<Prefecture[]>([]);
@@ -9,19 +10,7 @@ export const populationAtom = atom<Population[]>([]);
 export const usePrefectures = atom(
   (get) => get(prefectureAtom),
   async (_, set) => {
-    const res = await fetch(
-      'https://opendata.resas-portal.go.jp/api/v1/prefectures',
-      {
-        headers: {
-          'X-API-KEY': import.meta.env.VITE_API_KEY as string,
-        },
-      }
-    );
-    const { result, statusCode, message } = (await res.json()) as {
-      result: Prefecture[];
-      statusCode?: number;
-      message: string;
-    };
+    const { result, statusCode, message } = await getPrefectures();
     if (!statusCode) {
       set(prefectureAtom, result);
     } else {
@@ -59,25 +48,7 @@ export const usePopulations = atom(
     if (targetPrefs.length <= 0) {
       set(populationAtom, () => []);
     }
-    const promises = targetPrefs.map((pref) =>
-      fetch(
-        `https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=${pref.prefCode}`,
-        {
-          headers: {
-            'X-API-KEY': import.meta.env.VITE_API_KEY as string,
-          },
-        }
-      )
-    );
-    const results = await Promise.all(promises);
-    const toJsonPromises = results.map((r) => r.json());
-    const populationJsons = await Promise.all<{
-      result: {
-        data: { data: { year: number; value: number }[] }[];
-      };
-      statusCode: number;
-      message: string;
-    }>(toJsonPromises);
+    const populationJsons = await getPopulations(targetPrefs);
     const errorResult = populationJsons.find(
       (json) => json.statusCode !== undefined
     );

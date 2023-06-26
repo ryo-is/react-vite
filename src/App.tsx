@@ -16,10 +16,6 @@ const router = createBrowserRouter([
     path: '/store',
     element: <Store />,
   },
-  // {
-  //   path: '/population',
-  //   element: <Populations />,
-  // },
   {
     path: '/population',
     element: <PopulationByJotai />,
