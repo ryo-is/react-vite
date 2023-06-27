@@ -1,10 +1,11 @@
 import { Prefecture } from '../stores/jotai/population/types';
 
-export const getPrefectures = async (): Promise<{
+type GetPrefecturesResponse = {
   result: Prefecture[];
   statusCode?: number;
-  message: string;
-}> => {
+  message: string | null;
+};
+export const getPrefectures = async (): Promise<GetPrefecturesResponse> => {
   const res = await fetch(
     'https://opendata.resas-portal.go.jp/api/v1/prefectures',
     {
@@ -13,25 +14,38 @@ export const getPrefectures = async (): Promise<{
       },
     }
   );
-  const resJson = (await res.json()) as {
-    result: Prefecture[];
-    statusCode?: number;
-    message: string;
-  };
+  const resJson = (await res.json()) as GetPrefecturesResponse;
   return resJson;
+};
+
+type GetPopulationsResponse = {
+  result: {
+    boundaryYear: number;
+    data: (
+      | {
+          label: string;
+          data: {
+            year: number;
+            value: number;
+          }[];
+        }
+      | {
+          label: string;
+          data: {
+            year: number;
+            value: number;
+            rate: number;
+          }[];
+        }
+    )[];
+  };
+  statusCode?: number;
+  message: string | null;
 };
 
 export const getPopulations = async (
   prefectures: Prefecture[]
-): Promise<
-  {
-    result: {
-      data: { data: { year: number; value: number }[] }[];
-    };
-    statusCode: number;
-    message: string;
-  }[]
-> => {
+): Promise<GetPopulationsResponse[]> => {
   const promises = prefectures.map((pref) =>
     fetch(
       `https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?cityCode=-&prefCode=${pref.prefCode}`,
@@ -44,12 +58,8 @@ export const getPopulations = async (
   );
   const results = await Promise.all(promises);
   const toJsonPromises = results.map((r) => r.json());
-  const populationJsons = await Promise.all<{
-    result: {
-      data: { data: { year: number; value: number }[] }[];
-    };
-    statusCode: number;
-    message: string;
-  }>(toJsonPromises);
+  const populationJsons = await Promise.all<GetPopulationsResponse>(
+    toJsonPromises
+  );
   return populationJsons;
 };

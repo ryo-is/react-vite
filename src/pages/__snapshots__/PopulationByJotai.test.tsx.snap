@@ -1,0 +1,745 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PopulationByJotai > should match to the snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="flex space-x-4"
+  >
+    <div
+      class="w-1/5"
+    >
+      <div
+        class="mb-4 flex items-center justify-between"
+      >
+        <div>
+          Prefectures
+        </div>
+        <button
+          class="btn-info btn"
+          type="button"
+        >
+          clear all
+        </button>
+      </div>
+      <div
+        class="flex max-h-[80vh] w-full flex-col flex-wrap overflow-scroll rounded-lg border-2 border-zinc-500 px-8 py-4"
+      >
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="北海道"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="北海道"
+          >
+            北海道
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="青森県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="青森県"
+          >
+            青森県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="岩手県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="岩手県"
+          >
+            岩手県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="宮城県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="宮城県"
+          >
+            宮城県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="秋田県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="秋田県"
+          >
+            秋田県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="山形県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="山形県"
+          >
+            山形県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="福島県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="福島県"
+          >
+            福島県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="茨城県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="茨城県"
+          >
+            茨城県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="栃木県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="栃木県"
+          >
+            栃木県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="群馬県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="群馬県"
+          >
+            群馬県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="埼玉県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="埼玉県"
+          >
+            埼玉県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="千葉県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="千葉県"
+          >
+            千葉県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="東京都"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="東京都"
+          >
+            東京都
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="神奈川県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="神奈川県"
+          >
+            神奈川県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="新潟県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="新潟県"
+          >
+            新潟県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="富山県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="富山県"
+          >
+            富山県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="石川県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="石川県"
+          >
+            石川県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="福井県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="福井県"
+          >
+            福井県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="山梨県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="山梨県"
+          >
+            山梨県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="長野県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="長野県"
+          >
+            長野県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="岐阜県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="岐阜県"
+          >
+            岐阜県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="静岡県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="静岡県"
+          >
+            静岡県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="愛知県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="愛知県"
+          >
+            愛知県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="三重県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="三重県"
+          >
+            三重県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="滋賀県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="滋賀県"
+          >
+            滋賀県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="京都府"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="京都府"
+          >
+            京都府
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="大阪府"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="大阪府"
+          >
+            大阪府
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="兵庫県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="兵庫県"
+          >
+            兵庫県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="奈良県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="奈良県"
+          >
+            奈良県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="和歌山県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="和歌山県"
+          >
+            和歌山県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="鳥取県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="鳥取県"
+          >
+            鳥取県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="島根県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="島根県"
+          >
+            島根県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="岡山県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="岡山県"
+          >
+            岡山県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="広島県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="広島県"
+          >
+            広島県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="山口県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="山口県"
+          >
+            山口県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="徳島県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="徳島県"
+          >
+            徳島県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="香川県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="香川県"
+          >
+            香川県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="愛媛県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="愛媛県"
+          >
+            愛媛県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="高知県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="高知県"
+          >
+            高知県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="福岡県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="福岡県"
+          >
+            福岡県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="佐賀県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="佐賀県"
+          >
+            佐賀県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="長崎県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="長崎県"
+          >
+            長崎県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="熊本県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="熊本県"
+          >
+            熊本県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="大分県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="大分県"
+          >
+            大分県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="宮崎県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="宮崎県"
+          >
+            宮崎県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="鹿児島県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="鹿児島県"
+          >
+            鹿児島県
+          </label>
+        </div>
+        <div
+          class="my-1 flex items-center space-x-2"
+        >
+          <input
+            class="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+            id="沖縄県"
+            type="checkbox"
+          />
+          <label
+            class="label-text cursor-pointer text-zinc-200"
+            for="沖縄県"
+          >
+            沖縄県
+          </label>
+        </div>
+      </div>
+    </div>
+    <div
+      class="w-4/5"
+    >
+      <div
+        class="p-4"
+      >
+        Please select prefecture.
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

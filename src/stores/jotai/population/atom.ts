@@ -17,7 +17,7 @@ export const usePrefectures = atom(
       set(prefectureAtom, []);
       set(toastAtom, {
         status: 'error',
-        message,
+        message: message || '',
       });
     }
   }
@@ -47,6 +47,7 @@ export const usePopulations = atom(
     const targetPrefs = get(selectedPrefectureAtom);
     if (targetPrefs.length <= 0) {
       set(populationAtom, () => []);
+      return;
     }
     const populationJsons = await getPopulations(targetPrefs);
     const errorResult = populationJsons.find(
@@ -62,7 +63,7 @@ export const usePopulations = atom(
       set(populationAtom, () => []);
       set(toastAtom, {
         status: 'error',
-        message: errorResult.message,
+        message: errorResult.message || '',
       });
     }
   }
