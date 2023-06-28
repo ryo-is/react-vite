@@ -17,8 +17,8 @@ export const Toast = () => {
   }
 
   return (
-    <div className="toast">
-      <div className={`alert ${alertLevel[toast.status]}`}>
+    <div className="toast min-w-[512px]">
+      <div className={`alert ${alertLevel[toast.status]} rounded-md`}>
         <div className="flex gap-x-1 px-2">
           {toast.status === 'error' && (
             <ExclamationCircleIcon className="mr-1 h-6 w-6" />
