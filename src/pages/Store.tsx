@@ -47,7 +47,7 @@ export const Store = () => {
   const [doubleCountValue] = useAtom(getDoubleCountValue);
   const [sumCountValue] = useAtom(getSumCountValue);
   const [countAtomWithStorage, setCountAtomWithStorage] = useAtom(
-    countAtomWithStorageAtom
+    countAtomWithStorageAtom,
   );
 
   return (
@@ -58,14 +58,14 @@ export const Store = () => {
           <button
             type="button"
             onClick={() => setCount((c) => c + 1)}
-            className="btn-primary btn mr-2"
+            className="btn btn-primary mr-2"
           >
             count up
           </button>
           <button
             type="button"
             onClick={() => setCount((c) => c - 1)}
-            className="btn-primary btn"
+            className="btn btn-primary"
           >
             count down
           </button>
@@ -76,14 +76,14 @@ export const Store = () => {
           <button
             type="button"
             onClick={() => dispatch(increment(countByRecoil))}
-            className="btn-warning btn mr-2"
+            className="btn btn-warning mr-2"
           >
             count up
           </button>
           <button
             type="button"
             onClick={() => dispatch(decrement(countByRecoil))}
-            className="btn-warning btn"
+            className="btn btn-warning"
           >
             count down
           </button>
@@ -94,14 +94,14 @@ export const Store = () => {
           <button
             type="button"
             onClick={() => setCountByContext(countByContext + 1)}
-            className="btn-error btn mr-2"
+            className="btn btn-error mr-2"
           >
             count up
           </button>
           <button
             type="button"
             onClick={() => setCountByContext(countByContext - 1)}
-            className="btn-error btn"
+            className="btn btn-error"
           >
             count down
           </button>
@@ -115,14 +115,14 @@ export const Store = () => {
             <button
               type="button"
               onClick={() => countSetState({ count: countByRecoil + 1 })}
-              className="btn-success btn mr-2"
+              className="btn btn-success mr-2"
             >
               count up
             </button>
             <button
               type="button"
               onClick={() => countSetState({ count: countByRecoil - 1 })}
-              className="btn-success btn"
+              className="btn btn-success"
             >
               count down
             </button>
@@ -131,14 +131,14 @@ export const Store = () => {
             <button
               type="button"
               onClick={() => count2SetState({ count: count2ByRecoil + 1 })}
-              className="btn-success btn mr-2"
+              className="btn btn-success mr-2"
             >
               count2 up
             </button>
             <button
               type="button"
               onClick={() => count2SetState({ count: count2ByRecoil - 1 })}
-              className="btn-success btn"
+              className="btn btn-success"
             >
               count2 down
             </button>

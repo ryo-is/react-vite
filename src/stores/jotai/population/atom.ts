@@ -20,7 +20,7 @@ export const usePrefectures = atom(
         message: message || '',
       });
     }
-  }
+  },
 );
 
 export const useSelectedPrefectures = atom(
@@ -38,7 +38,7 @@ export const useSelectedPrefectures = atom(
         return prevPref;
       });
     }
-  }
+  },
 );
 
 export const usePopulations = atom(
@@ -51,7 +51,7 @@ export const usePopulations = atom(
     }
     const populationJsons = await getPopulations(targetPrefs);
     const errorResult = populationJsons.find(
-      (json) => json.statusCode !== undefined
+      (json) => json.statusCode !== undefined,
     );
     if (!errorResult) {
       const populations: Population[] = populationJsons.map((p, i) => ({
@@ -66,7 +66,7 @@ export const usePopulations = atom(
         message: errorResult.message || '',
       });
     }
-  }
+  },
 );
 
 export const usePopulationSeries = atom((get) => {

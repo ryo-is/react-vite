@@ -18,6 +18,6 @@ if (root) {
           </CountProvider>
         </Provider>
       </RecoilRoot>
-    </React.StrictMode>
+    </React.StrictMode>,
   );
 }

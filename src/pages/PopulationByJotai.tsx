@@ -38,7 +38,7 @@ const getStrokeColor = (index: number) =>
 export const PopulationByJotai = () => {
   const [prefectures, fetchPrefectures] = useAtom(usePrefectures);
   const [selectedPrefectures, setSelectedPrefectures] = useAtom(
-    useSelectedPrefectures
+    useSelectedPrefectures,
   );
   const fetchPopulations = useSetAtom(usePopulations);
   const [series] = useAtom(usePopulationSeries);
@@ -78,7 +78,7 @@ export const PopulationByJotai = () => {
           <div>Prefectures</div>
           <button
             type="button"
-            className="btn-info btn"
+            className="btn btn-info"
             onClick={() => handleOnClear()}
           >
             clear all

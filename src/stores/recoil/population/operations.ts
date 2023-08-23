@@ -15,7 +15,7 @@ export const useFetchPrefectures = () =>
         headers: {
           'X-API-KEY': import.meta.env.VITE_API_KEY as string,
         },
-      }
+      },
     );
     const { result, statusCode, message } = (await res.json()) as {
       result: Prefecture[];
@@ -51,8 +51,8 @@ export const useFetchPopulations = () =>
           headers: {
             'X-API-KEY': import.meta.env.VITE_API_KEY as string,
           },
-        }
-      )
+        },
+      ),
     );
     const results = await Promise.all(promises);
     const toJsonPromises = results.map((r) => r.json());
@@ -64,7 +64,7 @@ export const useFetchPopulations = () =>
       message: string;
     }>(toJsonPromises);
     const errorResult = populationJsons.find(
-      (json) => json.statusCode !== undefined
+      (json) => json.statusCode !== undefined,
     );
     if (!errorResult) {
       const populations: Population[] = populationJsons.map((p, i) => ({

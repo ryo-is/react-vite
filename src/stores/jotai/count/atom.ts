@@ -7,10 +7,10 @@ export const getCountValue = atom((get) => get(countAtom).count);
 export const getCount2Value = atom((get) => get(count2Atom).count);
 export const getDoubleCountValue = atom((get) => get(countAtom).count * 2);
 export const getSumCountValue = atom(
-  (get) => get(countAtom).count + get(count2Atom).count
+  (get) => get(countAtom).count + get(count2Atom).count,
 );
 
 export const countAtomWithStorageAtom = atomWithStorage(
   'countAtomWithStorage',
-  0
+  0,
 );

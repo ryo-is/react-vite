@@ -9,5 +9,5 @@ export const useToast = atom(
   (_, set, toast: Toast) => {
     set(toastAtom, toast);
     setTimeout(() => set(toastAtom, initialToastAtom), 3000);
-  }
+  },
 );

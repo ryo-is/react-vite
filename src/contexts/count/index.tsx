@@ -10,7 +10,7 @@ import {
 
 const countContext = createContext<number>(0);
 const setCountContext = createContext<Dispatch<SetStateAction<number>>>(
-  () => undefined
+  () => undefined,
 );
 
 interface CountProviderProps {

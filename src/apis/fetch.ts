@@ -12,7 +12,7 @@ export const getPrefectures = async (): Promise<GetPrefecturesResponse> => {
       headers: {
         'X-API-KEY': import.meta.env.VITE_API_KEY as string,
       },
-    }
+    },
   );
   const resJson = (await res.json()) as GetPrefecturesResponse;
   return resJson;
@@ -44,7 +44,7 @@ type GetPopulationsResponse = {
 };
 
 export const getPopulations = async (
-  prefectures: Prefecture[]
+  prefectures: Prefecture[],
 ): Promise<GetPopulationsResponse[]> => {
   const promises = prefectures.map((pref) =>
     fetch(
@@ -53,13 +53,12 @@ export const getPopulations = async (
         headers: {
           'X-API-KEY': import.meta.env.VITE_API_KEY as string,
         },
-      }
-    )
+      },
+    ),
   );
   const results = await Promise.all(promises);
   const toJsonPromises = results.map((r) => r.json());
-  const populationJsons = await Promise.all<GetPopulationsResponse>(
-    toJsonPromises
-  );
+  const populationJsons =
+    await Promise.all<GetPopulationsResponse>(toJsonPromises);
   return populationJsons;
 };

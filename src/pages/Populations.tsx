@@ -70,7 +70,7 @@ export const Populations = () => {
       <div className="w-1/5">
         <div className="mb-4 flex items-center justify-between">
           <div>Prefectures</div>
-          <button type="button" className="btn-info btn">
+          <button type="button" className="btn btn-info">
             clear all
           </button>
         </div>
