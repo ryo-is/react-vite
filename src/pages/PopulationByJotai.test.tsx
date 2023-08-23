@@ -22,7 +22,6 @@ const user = userEvent.setup();
 type ProviderProps = {
   initialValues: Array<
     | [typeof prefectureAtom, Prefecture[]]
-    | [typeof selectedPrefectureAtom, Prefecture[]]
     | [typeof populationAtom, Population[]]
   >;
   children: ReactNode;
@@ -55,7 +54,7 @@ describe('PopulationByJotai', () => {
   beforeEach(() => {
     vi.mock('recharts');
     vi.spyOn(Fetch, 'getPrefectures').mockResolvedValue(
-      mockGetPrefecturesResponse
+      mockGetPrefecturesResponse,
     );
     vi.spyOn(Fetch, 'getPopulations').mockResolvedValue([
       mockGetPopulationsResponse,
