@@ -2,7 +2,7 @@ import { useHydrateAtoms } from 'jotai/utils';
 import { Provider } from 'jotai';
 import { ReactNode } from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { vi } from 'vitest';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import {
   populationAtom,
@@ -61,22 +61,24 @@ describe('PopulationByJotai', () => {
     ]);
   });
 
-  afterEach(() => vi.restoreAllMocks());
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
 
-  it('should match to the snapshot', async () => {
+  test('should match to the snapshot', async () => {
     const { asFragment } = await waitFor(() => render(<ToastProvider />));
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should call getPrefectures when rendering', async () => {
+  test('should call getPrefectures when rendering', async () => {
     await waitFor(() => render(<ToastProvider />));
 
     expect(Fetch.getPrefectures).toHaveBeenCalled();
   });
 
-  it('should get population when select prefecture', async () => {
+  test('should get population when select prefecture', async () => {
     await waitFor(() => render(<ToastProvider />));
-
+    screen.debug();
     const cb = screen.getByRole('checkbox', { name: '北海道' });
     await user.click(cb);
 

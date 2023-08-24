@@ -15,7 +15,7 @@ exports[`PopulationByJotai > should match to the snapshot 1`] = `
           Prefectures
         </div>
         <button
-          class="btn-info btn"
+          class="btn btn-info"
           type="button"
         >
           clear all

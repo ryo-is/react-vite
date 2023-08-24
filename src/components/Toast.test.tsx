@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { useHydrateAtoms } from 'jotai/utils';
 import { Provider } from 'jotai';
 import { ReactNode } from 'react';
+import { describe, expect, test } from 'vitest';
 import { Toast } from './Toast';
 import { Toast as ToastType } from '../stores/jotai/toast/types';
 import { toastAtom } from '../stores/jotai/toast/atom';
@@ -31,12 +32,12 @@ const ToastProvider = () => (
 );
 
 describe('Toast', () => {
-  it('should match to the snapshot', () => {
+  test('should match to the snapshot', () => {
     const { asFragment } = render(<Toast />);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  it('should display message is test', () => {
+  test('should display message is test', () => {
     render(<ToastProvider />);
 
     const message = screen.getByTestId('toast-message');
