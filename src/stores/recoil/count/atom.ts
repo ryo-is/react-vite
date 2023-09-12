@@ -1,4 +1,5 @@
 import { atom } from 'recoil';
+
 import { InitialState } from './types';
 
 const initialState: InitialState = {

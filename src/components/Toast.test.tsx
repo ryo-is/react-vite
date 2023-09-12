@@ -1,11 +1,12 @@
 import { render, screen } from '@testing-library/react';
-import { useHydrateAtoms } from 'jotai/utils';
 import { Provider } from 'jotai';
+import { useHydrateAtoms } from 'jotai/utils';
 import { ReactNode } from 'react';
 import { describe, expect, test } from 'vitest';
+
 import { Toast } from './Toast';
-import { Toast as ToastType } from '../stores/jotai/toast/types';
 import { toastAtom } from '../stores/jotai/toast/atom';
+import { Toast as ToastType } from '../stores/jotai/toast/types';
 
 type ProviderProps = {
   initialValues: [typeof toastAtom, ToastType][];

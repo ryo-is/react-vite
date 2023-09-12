@@ -1,5 +1,6 @@
 import { ExclamationCircleIcon } from '@heroicons/react/20/solid';
 import { useAtom } from 'jotai';
+
 import { useToast } from '../stores/jotai/toast/atom';
 
 const alertLevel: Record<'info' | 'error' | 'success' | 'hidden', string> = {

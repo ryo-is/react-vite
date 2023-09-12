@@ -1,21 +1,22 @@
-import { useHydrateAtoms } from 'jotai/utils';
-import { Provider } from 'jotai';
-import { ReactNode } from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
-import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import userEvent from '@testing-library/user-event';
-import {
-  populationAtom,
-  prefectureAtom,
-  selectedPrefectureAtom,
-} from '../stores/jotai/population/atom';
+import { Provider } from 'jotai';
+import { useHydrateAtoms } from 'jotai/utils';
+import { ReactNode } from 'react';
+import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
+
 import { PopulationByJotai } from './PopulationByJotai';
-import { Population, Prefecture } from '../stores/jotai/population/types';
 import * as Fetch from '../apis/fetch';
 import {
   mockGetPopulationsResponse,
   mockGetPrefecturesResponse,
 } from '../helper/mockResponses';
+import {
+  populationAtom,
+  prefectureAtom,
+  selectedPrefectureAtom,
+} from '../stores/jotai/population/atom';
+import { Population, Prefecture } from '../stores/jotai/population/types';
 
 const user = userEvent.setup();
 

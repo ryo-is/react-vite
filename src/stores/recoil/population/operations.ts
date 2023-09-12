@@ -1,4 +1,5 @@
 import { useRecoilCallback } from 'recoil';
+
 import {
   populationAtom,
   prefectureAtom,

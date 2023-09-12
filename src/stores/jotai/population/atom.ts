@@ -1,7 +1,8 @@
 import { atom } from 'jotai';
-import { toastAtom } from '../toast/atom';
+
 import { Population, Prefecture } from './types';
 import { getPrefectures, getPopulations } from '../../../apis/fetch';
+import { toastAtom } from '../toast/atom';
 
 export const prefectureAtom = atom<Prefecture[]>([]);
 export const selectedPrefectureAtom = atom<Prefecture[]>([]);

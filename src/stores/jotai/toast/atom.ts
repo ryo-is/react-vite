@@ -1,4 +1,5 @@
 import { atom } from 'jotai';
+
 import { Toast } from './types';
 
 const initialToastAtom: Toast = { status: 'hidden', message: '' };

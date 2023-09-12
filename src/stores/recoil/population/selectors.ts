@@ -1,4 +1,5 @@
 import { selector, useRecoilValue } from 'recoil';
+
 import {
   populationAtom,
   prefectureAtom,

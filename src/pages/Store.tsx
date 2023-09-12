@@ -1,14 +1,7 @@
+import { useAtom } from 'jotai';
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { useAtom } from 'jotai';
-import {
-  useCountSelector,
-  useCount2Selector,
-  useSumCountSelector,
-} from '../stores/recoil/count/selectors';
-import { useCount, useCount2 } from '../stores/recoil/count/operations';
-import { RootState } from '../stores/redux';
-import { increment, decrement } from '../stores/redux/count/slice';
+
 import { useCountValue, useCountSetValue } from '../contexts/count';
 import {
   countAtom,
@@ -19,6 +12,14 @@ import {
   getSumCountValue,
   countAtomWithStorageAtom,
 } from '../stores/jotai/count/atom';
+import { useCount, useCount2 } from '../stores/recoil/count/operations';
+import {
+  useCountSelector,
+  useCount2Selector,
+  useSumCountSelector,
+} from '../stores/recoil/count/selectors';
+import { RootState } from '../stores/redux';
+import { increment, decrement } from '../stores/redux/count/slice';
 
 export const Store = () => {
   // component

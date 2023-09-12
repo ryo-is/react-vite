@@ -1,9 +1,10 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import { Top } from './pages/Top';
-import { Store } from './pages/Store';
-// import { Populations } from './pages/Populations';
-import { PopulationByJotai } from './pages/PopulationByJotai';
+
 import { Toast } from './components/Toast';
+import { PopulationByJotai } from './pages/PopulationByJotai';
+import { Store } from './pages/Store';
+import { Top } from './pages/Top';
+// import { Populations } from './pages/Populations';
 
 import './configs/recoil';
 

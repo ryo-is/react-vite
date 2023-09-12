@@ -1,4 +1,5 @@
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+
 import { countReducer } from './count/slice';
 
 const rootReducer = combineReducers({

@@ -1,4 +1,5 @@
 import { useSetRecoilState } from 'recoil';
+
 import { countAtom, count2Atom } from './atom';
 
 const countOperations = {

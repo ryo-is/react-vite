@@ -10,16 +10,17 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import {
-  usePopulationSeries,
-  usePrefectures,
-  useSelectedPrefectures,
-} from '../stores/recoil/population/selectors';
+
 import {
   useFetchPopulations,
   useFetchPrefectures,
   useOperationSelectedPrefecture,
 } from '../stores/recoil/population/operations';
+import {
+  usePopulationSeries,
+  usePrefectures,
+  useSelectedPrefectures,
+} from '../stores/recoil/population/selectors';
 import { Prefecture } from '../stores/recoil/population/types';
 
 const lineColors = [
