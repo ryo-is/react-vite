@@ -1,8 +1,8 @@
-import { render, screen } from '@testing-library/react';
+import { cleanup, render, screen } from '@testing-library/react';
 import { Provider } from 'jotai';
 import { useHydrateAtoms } from 'jotai/utils';
 import { ReactNode } from 'react';
-import { describe, expect, test } from 'vitest';
+import { afterEach, describe, expect, test } from 'vitest';
 
 import { Toast } from './Toast';
 import { toastAtom } from '../stores/jotai/toast/atom';
@@ -33,6 +33,10 @@ const ToastProvider = () => (
 );
 
 describe('Toast', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   test('should match to the snapshot', () => {
     const { asFragment } = render(<Toast />);
     expect(asFragment()).toMatchSnapshot();

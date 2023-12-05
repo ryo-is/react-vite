@@ -1,7 +1,10 @@
 /// <reference types="vitest" />
+/// <reference types="vite/client" />
+
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
 import checker from 'vite-plugin-checker';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   plugins: [
@@ -9,10 +12,13 @@ export default defineConfig({
     checker({
       typescript: true,
     }),
+    tsconfigPaths(),
   ],
   test: {
-    environment: 'jsdom',
     globals: true,
-    setupFiles: './vitest.setup.ts',
+    environment: 'jsdom',
+    include: ['src/**/*.test.{js,ts,jsx,tsx}'],
+    setupFiles: ['./src/test/setup.ts'],
+    css: true,
   },
 });

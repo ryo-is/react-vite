@@ -1,9 +1,13 @@
-import { render, screen } from '@testing-library/react';
-import { describe, expect, test } from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, test } from 'vitest';
 
 import { Top } from './Top';
 
 describe('Top', () => {
+  afterEach(() => {
+    cleanup();
+  });
+
   test('should match to the snapshot', () => {
     const { asFragment } = render(<Top />);
     expect(asFragment()).toMatchSnapshot();

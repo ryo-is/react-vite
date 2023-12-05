@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from '@testing-library/react';
+import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'jotai';
 import { useHydrateAtoms } from 'jotai/utils';
@@ -64,6 +64,7 @@ describe('PopulationByJotai', () => {
 
   afterEach(() => {
     vi.clearAllMocks();
+    cleanup();
   });
 
   test('should match to the snapshot', async () => {

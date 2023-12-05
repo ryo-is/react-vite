@@ -18,16 +18,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
-    "src",
-    "vite.config.ts",
-    "vitest.setup.ts"
-  ],
-  "references": [
-    {
-      "path": "./tsconfig.node.json"
-    }
+    "./src",
+    "vite.config.mts",
+    ".src/test/setup.ts",
+    "**/*.ts",
+    "**/*.tsx"
   ]
 }

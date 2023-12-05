@@ -11,6 +11,7 @@
   },
   "json.schemaDownload.enable": true,
   "vitest.commandLine": "npx vitest",
+  "vitest.enable": true,
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": [
     "source.addMissingImports",
