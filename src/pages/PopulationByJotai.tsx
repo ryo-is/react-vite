@@ -85,7 +85,7 @@ export const PopulationByJotai = () => {
             clear all
           </button>
         </div>
-        <div className="flex max-h-[80vh] w-full flex-col flex-wrap overflow-scroll rounded-lg border-2 border-zinc-500 px-8 py-4">
+        <div className="flex max-h-[80vh] w-full flex-col overflow-scroll rounded-lg border-2 border-zinc-500 p-4">
           {prefectures.length > 0 ? (
             <>
               {prefectures.map((p) => (
@@ -96,12 +96,16 @@ export const PopulationByJotai = () => {
                   <input
                     type="checkbox"
                     id={p.prefName}
-                    className="checkbox-info checkbox border-2 border-zinc-400 hover:border-zinc-200"
+                    className="hidden"
                     checked={isChecked(p.prefCode)}
                     onChange={(e) => handleOnChange(e.target.checked, p)}
                   />
                   <label
-                    className="label-text cursor-pointer text-zinc-200"
+                    className={`${
+                      isChecked(p.prefCode)
+                        ? 'border-zinc-400 bg-zinc-300 text-zinc-800'
+                        : 'border-zinc-500'
+                    } label-text w-full cursor-pointer  rounded-md border-2 p-4 first:mt-0`}
                     htmlFor={p.prefName}
                   >
                     {p.prefName}
