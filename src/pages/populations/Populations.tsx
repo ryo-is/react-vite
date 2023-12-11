@@ -15,13 +15,13 @@ import {
   useFetchPopulations,
   useFetchPrefectures,
   useOperationSelectedPrefecture,
-} from '../stores/recoil/population/operations';
+} from '../../stores/recoil/population/operations';
 import {
   usePopulationSeries,
   usePrefectures,
   useSelectedPrefectures,
-} from '../stores/recoil/population/selectors';
-import { Prefecture } from '../stores/recoil/population/types';
+} from '../../stores/recoil/population/selectors';
+import { Prefecture } from '../../stores/recoil/population/types';
 
 const lineColors = [
   '#b33dc6',

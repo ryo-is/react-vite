@@ -1,8 +1,8 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Toast } from './components/Toast';
-import { PopulationByJotai } from './pages/PopulationByJotai';
-import { Store } from './pages/Store';
+import { PopulationByJotai } from './pages/populations/PopulationByJotai';
+import { Store } from './pages/store/Store';
 import { Top } from './pages/Top';
 // import { Populations } from './pages/Populations';
 

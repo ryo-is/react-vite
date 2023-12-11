@@ -18,9 +18,9 @@ import {
   usePopulationSeries,
   usePrefectures,
   useSelectedPrefectures,
-} from '../stores/jotai/population/atom';
-import { Prefecture } from '../stores/jotai/population/types';
-import { useToast } from '../stores/jotai/toast/atom';
+} from '../../stores/jotai/population/atom';
+import { Prefecture } from '../../stores/jotai/population/types';
+import { useToast } from '../../stores/jotai/toast/atom';
 
 const lineColors = [
   '#b33dc6',

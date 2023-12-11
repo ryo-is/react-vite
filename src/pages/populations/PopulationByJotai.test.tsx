@@ -6,17 +6,17 @@ import { ReactNode } from 'react';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 
 import { PopulationByJotai } from './PopulationByJotai';
-import * as Fetch from '../apis/fetch';
+import * as Fetch from '../../apis/fetch';
 import {
   mockGetPopulationsResponse,
   mockGetPrefecturesResponse,
-} from '../helper/mockResponses';
+} from '../../helper/mockResponses';
 import {
   populationAtom,
   prefectureAtom,
   selectedPrefectureAtom,
-} from '../stores/jotai/population/atom';
-import { Population, Prefecture } from '../stores/jotai/population/types';
+} from '../../stores/jotai/population/atom';
+import { Population, Prefecture } from '../../stores/jotai/population/types';
 
 const user = userEvent.setup();
 
