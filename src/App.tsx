@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { Toast } from './components/Toast';
+import { FlowIndex } from './pages/flow';
 import { PopulationByJotai } from './pages/populations/PopulationByJotai';
 import { Store } from './pages/store/Store';
 import { Top } from './pages/Top';
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: '/population',
     element: <PopulationByJotai />,
+  },
+  {
+    path: '/flow',
+    element: <FlowIndex />,
   },
 ]);
 
