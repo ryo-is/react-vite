@@ -22,7 +22,13 @@ module.exports = {
     tsconfigRootDir: __dirname,
     project: ['./tsconfig.json'],
   },
-  plugins: ['react', '@typescript-eslint', 'import', 'unused-imports', 'tailwindcss'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'import',
+    'unused-imports',
+    'tailwindcss',
+  ],
   ignorePatterns: ['build'],
   rules: {
     'no-use-before-define': 'off',
@@ -48,41 +54,36 @@ module.exports = {
     ],
     'no-param-reassign': [2, { props: false }],
     'import/order': [
-      "error",
+      'error',
       {
-        "groups": [
-          "builtin", 
-          "external",
-          "internal",
-          [
-            "parent",
-            "sibling"
-          ],
-          "object",
-          "type",
-          "index"
+        groups: [
+          'builtin',
+          'external',
+          'internal',
+          ['parent', 'sibling'],
+          'object',
+          'type',
+          'index',
         ],
-        "newlines-between": "always",
-        "pathGroupsExcludedImportTypes": [
-          "builtin"
-        ],
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": true 
+        'newlines-between': 'always',
+        pathGroupsExcludedImportTypes: ['builtin'],
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: true,
         },
-        "pathGroups": [
+        pathGroups: [
           {
-            "pattern": "@/components/common",
-            "group": "internal",
-            "position": "before"
+            pattern: '@/components/common',
+            group: 'internal',
+            position: 'before',
           },
           {
-            "pattern": "@/components/hooks",
-            "group": "internal",
-            "position": "before"
+            pattern: '@/components/hooks',
+            group: 'internal',
+            position: 'before',
           },
-        ]
-      }
+        ],
+      },
     ],
     'import/extensions': [
       'error',
@@ -107,7 +108,8 @@ module.exports = {
         allowAsStatement: true,
       },
     ],
-    'import/no-extraneous-dependencies': 0
+    'import/no-extraneous-dependencies': 0,
+    'jsx-a11y/control-has-associated-label': 'off',
   },
   settings: {
     'import/resolver': {

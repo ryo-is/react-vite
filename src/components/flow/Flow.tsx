@@ -113,22 +113,20 @@ export const Flow = () => {
       >
         <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
 
-        <div className="absolute right-0 z-50 flex gap-x-2">
+        <div className="absolute bottom-4 left-4 z-50 flex gap-x-2">
           <button
-            className="flex items-center"
+            className="flex items-center rounded-lg p-2 hover:bg-zinc-300 hover:font-bold hover:text-base-100"
             type="button"
             onClick={() => zoomIn({ duration: 500 })}
           >
-            <PlusIcon className="h-4 w-4" />
-            <div className="px-2 text-sm">Expand</div>
+            <PlusIcon className="h-5 w-5" />
           </button>
           <button
-            className="flex items-center"
+            className="flex items-center rounded-lg p-2 hover:bg-zinc-300 hover:font-bold hover:text-base-100"
             type="button"
             onClick={() => zoomOut({ duration: 500 })}
           >
-            <MinusIcon className="h-4 w-4" />
-            <div className="px-2 text-sm">Shrink</div>
+            <MinusIcon className="h-5 w-5" />
           </button>
         </div>
       </ReactFlow>
