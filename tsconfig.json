@@ -31,6 +31,7 @@
     "vite.config.mts",
     ".src/test/setup.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "eslint.config.mjs"
   ]
 }
