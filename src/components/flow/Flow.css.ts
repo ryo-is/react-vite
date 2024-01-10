@@ -1,5 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
+import { vars } from '@/vars.css';
+
 export const container = style({
   height: 'calc(100vh - 4rem)',
 });
@@ -19,9 +21,9 @@ export const controlButton = style({
   borderRadius: '0.5rem',
   padding: '0.5rem',
   ':hover': {
-    backgroundColor: '#d4d4d8',
+    backgroundColor: vars.color.primary,
     fontWeight: 'bold',
-    color: '#2a303c',
+    color: vars.color.base,
   },
 });
 

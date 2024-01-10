@@ -1,6 +1,8 @@
 import { memo } from 'react';
 import { EdgeProps, getBezierPath } from 'reactflow';
 
+import { vars } from '@/vars.css';
+
 const CustomEdgeBase = ({
   id,
   sourceX,
@@ -25,7 +27,7 @@ const CustomEdgeBase = ({
       <path
         id={id}
         style={{
-          stroke: '#d4d4d8',
+          stroke: vars.color.primary,
           strokeLinecap: 'round',
           strokeLinejoin: 'round',
           strokeWidth: 2,

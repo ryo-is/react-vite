@@ -149,6 +149,8 @@ export default [
       'react/jsx-one-expression-per-line': 'off',
       'object-curly-newline': 'off',
       'operator-linebreak': 'off',
+      // eslint-disable-next-line no-dupe-keys
+      'import/extensions': 'off',
     },
     settings: {
       react: {
