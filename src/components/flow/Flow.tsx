@@ -13,6 +13,8 @@ import ReactFlow, {
   useReactFlow,
 } from 'reactflow';
 
+import * as styles from './Flow.css';
+
 import { CustomEdge } from '@/components/flow/CustomEdge';
 import { CustomNode } from '@/components/flow/CustomNode';
 
@@ -54,7 +56,7 @@ const initialEdges = [
 
 export const Flow = () => {
   const edgeUpdateSuccessful = useRef(true);
-  const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
+  const [nodes, , onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
   const { zoomIn, zoomOut } = useReactFlow();
 
@@ -95,7 +97,7 @@ export const Flow = () => {
   );
 
   return (
-    <div className="h-[calc(100vh-4rem)]">
+    <div className={styles.container}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -113,20 +115,20 @@ export const Flow = () => {
       >
         <Background variant={BackgroundVariant.Dots} gap={12} size={1} />
 
-        <div className="absolute bottom-4 left-4 z-50 flex gap-x-2">
+        <div className={styles.controlArea}>
           <button
-            className="flex items-center rounded-lg p-2 hover:bg-zinc-300 hover:font-bold hover:text-base-100"
+            className={styles.controlButton}
             type="button"
             onClick={() => zoomIn({ duration: 500 })}
           >
-            <PlusIcon className="h-5 w-5" />
+            <PlusIcon className={styles.controlButtonIcon} />
           </button>
           <button
-            className="flex items-center rounded-lg p-2 hover:bg-zinc-300 hover:font-bold hover:text-base-100"
+            className={styles.controlButton}
             type="button"
             onClick={() => zoomOut({ duration: 500 })}
           >
-            <MinusIcon className="h-5 w-5" />
+            <MinusIcon className={styles.controlButtonIcon} />
           </button>
         </div>
       </ReactFlow>

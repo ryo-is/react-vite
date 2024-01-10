@@ -16,6 +16,7 @@
   "dependencies": {
     "@heroicons/react": "2.0.18",
     "@reduxjs/toolkit": "1.9.7",
+    "@vanilla-extract/css": "1.14.0",
     "@vitejs/plugin-react": "4.2.1",
     "jotai": "2.6.0",
     "react": "18.2.0",
@@ -40,6 +41,7 @@
     "@types/react-redux": "7.1.31",
     "@typescript-eslint/eslint-plugin": "6.14.0",
     "@typescript-eslint/parser": "6.14.0",
+    "@vanilla-extract/vite-plugin": "3.9.3",
     "autoprefixer": "10.4.16",
     "daisyui": "4.4.14",
     "eslint": "8.55.0",
