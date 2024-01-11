@@ -26,6 +26,7 @@ export default [
   {
     ignores: [
       'build',
+      'src/build',
       'tailwind.config.js',
       'postcss.config.js',
       'dist',
@@ -59,7 +60,7 @@ export default [
         ecmaVersion: 12,
         sourceType: 'module',
         tsconfigRootDir: __dirname,
-        project: ['./tsconfig.json'],
+        project: ['./tsconfig.eslint.json'],
       },
     },
     rules: {
