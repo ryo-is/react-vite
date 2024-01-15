@@ -10,7 +10,7 @@ import {
   title,
 } from './assembly.css';
 
-import { add, joinText } from '@/build/release.js';
+import { add, joinText } from '@/build/release';
 
 export const AssemblyIndex = () => {
   const [addNumbers, setAddNumbers] = useState<{

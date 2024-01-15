@@ -38,6 +38,9 @@ export const button = style({
   padding: '6px 24px',
   borderRadius: '6px',
   width: 'fit-content',
+  ':active': {
+    backgroundColor: '#a1a1aa !important',
+  },
 });
 
 export const resultNumber = style({

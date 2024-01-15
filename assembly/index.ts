@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/lines-between-class-members */
 /* eslint-disable prefer-destructuring */
 // The entry file of your WebAssembly module.
 
@@ -7,9 +8,7 @@ export function add(a: i32, b: i32): i32 {
 
 class JoinTextProps {
   str1!: string;
-
   str2!: string;
-
   separator!: string;
 }
 
