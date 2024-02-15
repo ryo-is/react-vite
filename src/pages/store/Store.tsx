@@ -1,6 +1,5 @@
 import { useAtom } from 'jotai';
 import { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
 
 import { useCountValue, useCountSetValue } from '../../contexts/count';
 import {
@@ -18,8 +17,6 @@ import {
   useCount2Selector,
   useSumCountSelector,
 } from '../../stores/recoil/count/selectors';
-import { RootState } from '../../stores/redux';
-import { increment, decrement } from '../../stores/redux/count/slice';
 
 export const Store = () => {
   // component
@@ -31,10 +28,6 @@ export const Store = () => {
   const countSetState = useCount();
   const count2SetState = useCount2();
   const sumCount = useSumCountSelector();
-
-  // redux
-  const { countByRedux } = useSelector((stete: RootState) => stete.count);
-  const dispatch = useDispatch();
 
   // contexts
   const countByContext = useCountValue();
@@ -71,24 +64,6 @@ export const Store = () => {
             count down
           </button>
           <div className="mt-2 text-lg">count is: {count}</div>
-        </div>
-        <div className="my-2">
-          <div className="mb-2">Redux State</div>
-          <button
-            type="button"
-            onClick={() => dispatch(increment(countByRecoil))}
-            className="btn btn-warning mr-2"
-          >
-            count up
-          </button>
-          <button
-            type="button"
-            onClick={() => dispatch(decrement(countByRecoil))}
-            className="btn btn-warning"
-          >
-            count down
-          </button>
-          <div className="mt-2 text-lg">count is: {countByRedux}</div>
         </div>
         <div className="my-2">
           <div className="mb-2">Context State</div>

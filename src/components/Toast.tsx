@@ -22,7 +22,7 @@ export const Toast = () => {
       <div className={`alert ${alertLevel[toast.status]} rounded-md`}>
         <div className="flex gap-x-1 px-2">
           {toast.status === 'error' && (
-            <ExclamationCircleIcon className="mr-1 h-6 w-6" />
+            <ExclamationCircleIcon className="mr-1 size-6" />
           )}
           <span data-testid="toast-message">{toast.message}</span>
         </div>
