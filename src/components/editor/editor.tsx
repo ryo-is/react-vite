@@ -3,13 +3,20 @@ import { HTMLHint } from 'htmlhint';
 import _ from 'lodash';
 import { useEffect } from 'react';
 
-import { useEditorContentValue } from '@/stores/jotai/editor/atom';
+import { container } from './editor.css';
+import { FloatButton } from '../common/floatButton';
+
+import {
+  useEditorContentValue,
+  useEditorModalIsOpen,
+} from '@/stores/jotai/editor/atom';
 
 const EditorPath = 'monaco';
 
 export const Editor = () => {
   const monaco = useMonaco();
   const { content, setContent } = useEditorContentValue();
+  const { setIsOpen } = useEditorModalIsOpen();
 
   const onChangeEvent = _.debounce((data: string | undefined): void => {
     const errors = HTMLHint.verify(data || '', {
@@ -88,12 +95,12 @@ export const Editor = () => {
   }, [monaco]);
 
   return (
-    <div>
+    <div className={container}>
       <MonacoEditor
         language="html"
         theme="custom-theme"
         width="100%"
-        defaultValue={content}
+        value={content}
         onChange={(data): void => onChangeEvent(data)}
         options={{
           minimap: {
@@ -116,6 +123,7 @@ export const Editor = () => {
           });
         }}
       />
+      <FloatButton label="ApplyTemplate" clickandler={() => setIsOpen(true)} />
     </div>
   );
 };
