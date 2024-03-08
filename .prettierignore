@@ -1,2 +1,3 @@
 *.svg
 __snapshots__/
+build
