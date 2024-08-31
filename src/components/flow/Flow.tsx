@@ -5,10 +5,10 @@ import ReactFlow, {
   useNodesState,
   useEdgesState,
   addEdge,
-  Edge,
-  Connection,
+  type Edge,
+  type Connection,
   BackgroundVariant,
-  EdgeTypes,
+  type EdgeTypes,
   updateEdge,
   useReactFlow,
 } from 'reactflow';

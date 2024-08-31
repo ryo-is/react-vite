@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-import {
+import type {
   PrefectureAtom,
   SelectedPrefectureAtom,
   PopulationAtom,

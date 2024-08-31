@@ -1,4 +1,4 @@
-import { Prefecture } from '../stores/jotai/population/types';
+import type { Prefecture } from '../stores/jotai/population/types';
 
 type GetPrefecturesResponse = {
   result: Prefecture[];

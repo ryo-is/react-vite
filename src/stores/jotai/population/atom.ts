@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 
-import { Population, Prefecture } from './types';
+import type { Population, Prefecture } from './types';
 import { getPrefectures, getPopulations } from '../../../apis/fetch';
 import { toastAtom } from '../toast/atom';
 

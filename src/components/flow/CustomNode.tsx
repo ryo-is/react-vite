@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { Handle, NodeProps, Position } from 'reactflow';
+import { Handle, type NodeProps, Position } from 'reactflow';
 
 import {
   customNode,

@@ -1,6 +1,6 @@
 import { atom } from 'jotai';
 
-import { Toast } from './types';
+import type { Toast } from './types';
 
 const initialToastAtom: Toast = { status: 'hidden', message: '' };
 export const toastAtom = atom<Toast>(initialToastAtom);

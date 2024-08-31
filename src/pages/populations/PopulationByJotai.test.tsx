@@ -2,7 +2,7 @@ import { cleanup, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { Provider } from 'jotai';
 import { useHydrateAtoms } from 'jotai/utils';
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 
 import { PopulationByJotai } from './PopulationByJotai';
@@ -16,7 +16,10 @@ import {
   prefectureAtom,
   selectedPrefectureAtom,
 } from '../../stores/jotai/population/atom';
-import { Population, Prefecture } from '../../stores/jotai/population/types';
+import type {
+  Population,
+  Prefecture,
+} from '../../stores/jotai/population/types';
 
 const user = userEvent.setup();
 

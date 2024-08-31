@@ -1,6 +1,6 @@
 import { atom } from 'recoil';
 
-import { InitialState } from './types';
+import type { InitialState } from './types';
 
 const initialState: InitialState = {
   count: 0,

@@ -5,7 +5,7 @@ import {
   prefectureAtom,
   selectedPrefectureAtom,
 } from './atoms';
-import {
+import type {
   PopulationAtom,
   PrefectureAtom,
   SelectedPrefectureAtom,

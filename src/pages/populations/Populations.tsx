@@ -21,7 +21,7 @@ import {
   usePrefectures,
   useSelectedPrefectures,
 } from '../../stores/recoil/population/selectors';
-import { Prefecture } from '../../stores/recoil/population/types';
+import type { Prefecture } from '../../stores/recoil/population/types';
 
 const lineColors = [
   '#b33dc6',

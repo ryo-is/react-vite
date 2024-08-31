@@ -1,5 +1,5 @@
 import { memo } from 'react';
-import { EdgeProps, getBezierPath } from 'reactflow';
+import { type EdgeProps, getBezierPath } from 'reactflow';
 
 import { vars } from '@/vars.css';
 

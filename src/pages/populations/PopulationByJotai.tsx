@@ -19,7 +19,7 @@ import {
   usePrefectures,
   useSelectedPrefectures,
 } from '../../stores/jotai/population/atom';
-import { Prefecture } from '../../stores/jotai/population/types';
+import type { Prefecture } from '../../stores/jotai/population/types';
 import { useToast } from '../../stores/jotai/toast/atom';
 
 const lineColors = [

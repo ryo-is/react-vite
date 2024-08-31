@@ -5,7 +5,7 @@ import {
   prefectureAtom,
   selectedPrefectureAtom,
 } from './atoms';
-import { Population, Prefecture } from './types';
+import type { Population, Prefecture } from './types';
 
 export const useFetchPrefectures = () =>
   useRecoilCallback(({ set }) => async () => {
